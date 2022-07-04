@@ -1,0 +1,99 @@
+.container {
+  background-color: rgb(var(--gray-500));
+  color: rgb(var(--gray-100));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.75rem;
+
+  width: 100%;
+  min-height: 3.5rem;
+
+  border: 1px solid rgb(var(--gray-400));
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+.container p {
+  flex: 1;
+
+  font-size: 0.875rem;
+}
+
+.container svg {
+  transition: color 0.1s;
+}
+
+.uncompleted,
+.completed {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.trash {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.trash svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.uncompleted button,
+.completed button {
+  border-radius: 50%;
+}
+
+.uncompleted button {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border: 2px solid rgb(var(--blue));
+}
+
+.completed button {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0.9;
+  background-color: rgb(var(--purple-dark));
+  color: rgb(var(--gray-100));
+}
+
+.completed p {
+  text-decoration: line-through;
+  color: rgb(var(--gray-300));
+}
+
+.completed svg {
+  width: 1rem;
+  height: 1rem;
+
+  font-weight: bold;
+}
+
+.uncompleted button:hover {
+  background-color: rgba(var(--blue-dark), 0.2);
+}
+
+.completed button:hover {
+  background-color: rgb(var(--purple));
+}
+
+.trash {
+  color: rgb(var(--gray-300));
+  border-radius: 4px;
+}
+
+.trash:hover {
+  color: rgb(var(--danger));
+  background-color: rgb(var(--gray-400));
+}
