@@ -34,13 +34,17 @@
 }
 
 .trash {
-  width: 1.5rem;
-  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trash svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  min-width: 0.875rem;
+  min-height: 0.875rem;
 }
 
 .uncompleted button,
@@ -48,16 +52,21 @@
   border-radius: 50%;
 }
 
+.uncompleted button:focus,
+.completed button:focus {
+  box-shadow: 0 0 0 2px rgb(var(--gray-200));
+}
+
 .uncompleted button {
-  width: 1.5rem;
-  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
 
   border: 2px solid rgb(var(--blue));
 }
 
 .completed button {
-  width: 1.5rem;
-  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
 
   display: flex;
   justify-content: center;
@@ -74,8 +83,8 @@
 }
 
 .completed svg {
-  width: 1rem;
-  height: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
 
   font-weight: bold;
 }

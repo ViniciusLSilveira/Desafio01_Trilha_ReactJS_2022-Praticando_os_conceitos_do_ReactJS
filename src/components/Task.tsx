@@ -1,28 +1,35 @@
-import { Check, Circle, Trash } from 'phosphor-react';
+import { Check, Trash } from 'phosphor-react';
+import { useTodoList } from '../hooks/useTodoList';
+import { ITask } from '../types';
 import styles from './Task.module.css';
 
-export interface ITaskProps {
-  completed: boolean;
-  content: string;
-}
+export function Task({ id, completed, content }: ITask) {
+  const { removeTask, toggleTaskCompletion } = useTodoList();
 
-export function Task({ completed, content }: ITaskProps) {
+  function handleRemoveTask() {
+    removeTask(id);
+  }
+
+  function handleToggleTaskCompletion() {
+    toggleTaskCompletion(id);
+  }
+
   return (
     <div className={styles.container}>
       {completed ? (
         <div className={styles.completed}>
-          <button>
+          <button onClick={handleToggleTaskCompletion}>
             <Check />
           </button>
           <p>{content}</p>
         </div>
       ) : (
         <div className={styles.uncompleted}>
-          <button />
+          <button onClick={handleToggleTaskCompletion} />
           <p>{content}</p>
         </div>
       )}
-      <button className={styles.trash}>
+      <button className={styles.trash} onClick={handleRemoveTask}>
         <Trash />
       </button>
     </div>
