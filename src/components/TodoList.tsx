@@ -19,7 +19,8 @@ export function TodoList() {
         <div>
           Concluídas{' '}
           <span>
-            {completedTaskCount} de {todoListCount}
+            {todoListCount > 0 ? `${completedTaskCount} de ` : ''}
+            {todoListCount}
           </span>
         </div>
       </header>
